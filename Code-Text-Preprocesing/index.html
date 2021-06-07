@@ -1,0 +1,783 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="peaceiris">
+      
+      
+        <link rel="canonical" href="https://mkdocs.peaceiris.com/Code-Text-Preprocesing/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
+    
+    
+      
+        <title>Code Text Preprocesing - Web Mining</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="manifest" href="../manifest.json" crossorigin="use-credentials">
+    
+    
+      <link rel="stylesheet" href="../assets/css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Web Mining" class="md-header__button md-logo" aria-label="Web Mining" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Web Mining
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Code Text Preprocesing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/gafisk/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    19-177 Galih Restu Baihaqi
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Web Mining" class="md-nav__button md-logo" aria-label="Web Mining" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Web Mining
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/gafisk/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    19-177 Galih Restu Baihaqi
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Materi
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Materi" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Materi
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Crawling/" class="md-nav__link">
+        Crawling
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Text Preprocesing
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Text Preprocesing" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Text Preprocesing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Text-Preprocesing/" class="md-nav__link">
+        Teori
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Code
+      </a>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      <label class="md-nav__link" for="__nav_2_3">
+        Modelling
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Modelling" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Modelling
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelling/" class="md-nav__link">
+        Teori
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code_python_K-means/" class="md-nav__link">
+        Code
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      <label class="md-nav__link" for="__nav_2_4">
+        Evaluasi
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Evaluasi" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Evaluasi
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Evaluasi-Klasifikasi/" class="md-nav__link">
+        Teori
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code-Evaluasi-Klasifikasi/" class="md-nav__link">
+        Code
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Code</h1>
+                
+                <h3> Case Folding </h3>
+
+<h5> Menjadikan Huruf Kecil </h5>
+
+<div class="codehilite"><pre><span></span><code><span class="n">kalimat</span> <span class="o">=</span> <span class="s2">&quot;Dibawah ini adalah kabupaten yang ada di Madura, yaitu Sumenep, Pamekasan, Sampang dan Bangkalan&quot;</span>
+<span class="n">lower_case</span> <span class="o">=</span> <span class="n">kalimat</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lower_case</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Output</p>
+<div class="codehilite"><pre><span></span><code>dibawah ini adalah kabupaten yang ada di madura, yaitu sumenep, pamekasan, sampang dan bangkalan
+</code></pre></div>
+
+<p>Fungsi lower adalah fungsi untuk membuat tulisan Kapital pada huruf menjadi huruf kecil</p>
+<h5> Menghilangkan Angka </h5>
+
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span> 
+
+<span class="n">kalimat</span> <span class="o">=</span> <span class="s2">&quot;Madura memiliki 4 kabupaten&quot;</span>
+<span class="n">hasil</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d+&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">kalimat</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hasil</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Output</p>
+<div class="codehilite"><pre><span></span><code>Madura memiliki  kabupaten
+</code></pre></div>
+
+<p>Dengan mengimport re lalu menggunakan fungsi Sub dan ditambahkan \d+ yang merupakan reguler expression</p>
+<h5> Menghilangkan Tanda Baca </h5>
+
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">string</span>
+
+<span class="n">kalimat</span> <span class="o">=</span> <span class="s2">&quot;Ini &amp;adalah [contoh] kalimat? </span><span class="si">{dengan}</span><span class="s2"> tanda. baca?!!&quot;</span>
+<span class="n">hasil</span> <span class="o">=</span> <span class="n">kalimat</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hasil</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Output</p>
+<div class="codehilite"><pre><span></span><code>Ini adalah contoh kalimat dengan tanda baca
+</code></pre></div>
+
+<p>menghilangkan tanda baca agar hasil output adalah berupa text saja. Str.maketrans adalah fungsi dari Python untuk melakukan pemetaan karakter terhadap tabel. lalu mengambil 2 parameter, lalu string.punctuatuion akan menghapus tanda baca.</p>
+<h5> Menghilangkan Karakter Kosong </h5>
+
+<div class="codehilite"><pre><span></span><code><span class="n">kalimat</span> <span class="o">=</span> <span class="s2">&quot; </span><span class="se">\b</span><span class="s2"> ini kalimat contoh</span><span class="se">\b</span><span class="s2"> &quot;</span>
+<span class="n">hasil</span> <span class="o">=</span> <span class="n">kalimat</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hasil</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Output</p>
+<div class="codehilite"><pre><span></span><code>ini kalimat contoh
+</code></pre></div>
+
+<p>Tujuannya untuk menghilangkan karakter karakter yang kosong dengan menggunakan fungsi strip(), strip() adalah fungsi dari python yang digunakan untuk menghapus awal dan akhir dalam sebuah kalimat yang sama</p>
+<h3> Tokenisasi </h3>
+
+<h5> Libarary NLTK </h5>
+
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span> 
+
+<span class="n">kalimat</span> <span class="o">=</span> <span class="s2">&quot;Iffa adalah anak yang berbakti kepada orang tuanya&quot;</span>
+
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">tokenize</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">kalimat</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Output</p>
+<div class="codehilite"><pre><span></span><code>[&#39;Iffa&#39;, &#39;adalah&#39;, &#39;anak&#39;, &#39;yang&#39;, &#39;berbakti&#39;, &#39;kepada&#39;, &#39;orang&#39;, &#39;tuanya&#39;]
+</code></pre></div>
+
+<p>Library nltk di import, lalu melakukan tokenisasi untuk memisakan kata dalam sebuah kalimat. Word_tokenize adalah fungsi yang digunakan untuk mengembalikan token.</p>
+<h5> tokenisasi dan case folding </h5>
+
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span> 
+
+<span class="n">kalimat</span> <span class="o">=</span> <span class="s2">&quot;Iffa adalah anak yang berbakti kepada orang tuanya.&quot;</span>
+<span class="n">kalimat</span> <span class="o">=</span> <span class="n">kalimat</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">))</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">tokenize</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">kalimat</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Outputnya</p>
+<div class="codehilite"><pre><span></span><code>[&#39;iffa&#39;, &#39;adalah&#39;, &#39;anak&#39;, &#39;yang&#39;, &#39;berbakti&#39;, &#39;kepada&#39;, &#39;orang&#39;, &#39;tuanya&#39;]
+</code></pre></div>
+
+<p>Dengan menggabungkan keduanya, maka nilai tiitk, Nilai huruf besar akan hilang pada hasil outputnya, pada code diatas alah penggabungan case folding dan tokenisasi</p>
+<h5> Menghitung Frekuensi kemunculan kata </h5>
+
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">nltk.probability</span> <span class="kn">import</span> <span class="n">FreqDist</span>
+
+<span class="n">kalimat</span> <span class="o">=</span> <span class="s2">&quot;Andi dan Iffa adalah anak yang berbakti kepada orang tuanya. Andi dan Iffa tinggal di Bangkalan&quot;</span>
+<span class="n">kalimat</span> <span class="o">=</span> <span class="n">kalimat</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">))</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">tokenize</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">kalimat</span><span class="p">)</span>
+<span class="n">kemunculan</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">FreqDist</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kemunculan</span><span class="o">.</span><span class="n">most_common</span><span class="p">())</span>
+</code></pre></div>
+
+<p>Output</p>
+<div class="codehilite"><pre><span></span><code>[(&#39;andi&#39;, 2), (&#39;dan&#39;, 2), (&#39;iffa&#39;, 2), (&#39;adalah&#39;, 1), (&#39;anak&#39;, 1), (&#39;yang&#39;, 1), (&#39;berbakti&#39;, 1), (&#39;kepada&#39;, 1), (&#39;orang&#39;, 1), (&#39;tuanya&#39;, 1), (&#39;tinggal&#39;, 1), (&#39;di&#39;, 1), (&#39;bangkalan&#39;, 1)]
+</code></pre></div>
+
+<p>Frekuensi kemunculan setiap kata akan di hitung dengan Library FreqDist. FreqDist adalah kelas dari python yang sudah tersedia dalam NLTK yang tujuannya untuk menghitung frekuensi kemunculan token.</p>
+<h5> Melihat Frekuensi Secara Visual </h5>
+
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">kemunculan</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="n">cumulative</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Output</p>
+<p><img alt="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYIAAAExCAYAAABxpKVSAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjMuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8vihELAAAACXBIWXMAAAsTAAALEwEAmpwYAAAozklEQVR4nO3deZxddX3/8dd7MtmGhIQYwIFE4gIqUqgkKIoLqPXnVldQqXWrNrVuKFbpz9oiarVW7SIW4wJSsVrRopiIIiqLLFEmCCGAKMUlkcgWssBkz6d/nHNnbiZ31vs998495/18POYxuefcez7fydy5n/PdFRGYmVl1dbW7AGZm1l5OBGZmFedEYGZWcU4EZmYV50RgZlZxTgRmZhXX3e4CjNf8+fNj0aJFE3rt1q1bmTlzZtoCtSmOf5bJF6NVccoSo1VxyhKj2TirVq26LyIObHgyIjrqa/HixTFRfX19E37tZIvjn2XyxWhVnLLEaFWcssRoNg7QF8N8rrppyMys4pwIzMwqzonAzKzinAjMzCqusEQgaaGkyyXdJukWSac1eI4kfVrSHZJWSzq2qPKYmVljRQ4f3QW8JyJukDQbWCXpsoi4te45zwcOz7+eDHw2/25mZi1SWCKIiPXA+vzfWyTdBhwK1CeClwBfzoc2rZQ0V1Jv/tqk9uwJ9kSwZ0/xy263Ik54+XAzS6QlE8okLQKeCPx0yKlDgbV1j9flx5IngjO/cwsXrLwbvnlJ6ks3VnCcQ2dP4YdH72bmtCmFxjGz8lPRd5aSZgFXAv8YERcNOfdd4GMRcXX++EfA+yJi1ZDnLQWWAvT29i5evnz5uMvxhRs2c+n/9k/sh5hkar+xjz1rHkc8bFqhsfr7++np6XGMSRSnLDFaFacsMZqNs2TJklURsaThyeFmmqX4AqYClwKnD3P+c8CpdY9vB3pHuqZnFke85YK+OOyMFfHtn68rNE5EeWZlluV3X6YYrYpTlhjNxqEdM4slCTgXuC0i/mWYp30HeF0+euh4YFMU0D9QNgvnZXcE6x7Y2uaSmFkZFNlHcALwWuBmSTfmx94PPAIgIpYBlwAvAO4A+oE3Flie0lhwQLbo1LoHytHUZWbtVeSooasBjfKcAN5WVBnKauEBWY1g7QbXCMyseZ5Z3IEWzstqBGtdIzCzBJwIOtCCvEZw18at7G7BvAgzKzcngg40Y+oU5s7oYufu4A+bt7W7OGbW4ZwIOtTB+2UTydZucPOQmTXHiaBDHZQnAg8hNbNmORF0qAN7XCMwszScCDrUQNOQRw6ZWZOcCDrUQNOQ5xKYWZOcCDrUQa4RmFkiTgQdan7PFLoEf9i8je27dre7OGbWwZwIOlR3l+idM5MIWL/RcwnMbOKcCDpYbfE5Nw+ZWTOcCDpYbTlqLz5nZs1wIuhgA6uQukZgZk1wIuhgA6uQelKZmTXBiaCDDTQNeZkJM2uCE0EHqzUNrXONwMya4ETQwQ6aPZ1pU7q4/6Ed9O/Y1e7imFmHciLoYF1d4tCB/YvdPGRmE+NE0OEG5hK4ecjMJsiJoMMNziVwIjCziXEi6HCDcwncNGRmE+NE0OE8l8DMmuVE0OFcIzCzZjkRdLgFA6OGXCMws4lxIuhw8/abRs+0KWzZtotN/TvbXRwz60BOBB1OkhefM7OmOBGUgDuMzawZTgQlsMA1AjNrghNBCXiDGjNrhhNBCSz0yCEza0JhiUDSeZLukbRmmPNzJC2XdJOkWyS9saiylN0CzyUwsyYUWSM4H3jeCOffBtwaEccAJwKfkjStwPKUVq2zeN0D/UREm0tjZp2msEQQEVcBG0Z6CjBbkoBZ+XO9qP4EzJ4xlbk9U9m2cw/3Pri93cUxsw7Tzj6CzwCPB+4CbgZOi4g9bSxPRxuYS+AOYzMbJxXZlCBpEbAiIo5qcO5k4ATgdODRwGXAMRGxucFzlwJLAXp7excvX758QuXp7++np6dnQq+dbHGGxvjkdQ9w3brtvOvJc3j6I2YWFqcIZYnRqjhlidGqOGWJ0WycJUuWrIqIJQ1PRkRhX8AiYM0w574LPL3u8Y+BJ412zcWLF8dE9fX1Tfi1ky3O0Bgf/e6tcdgZK+LsH/2y0DhFKEuMVsUpS4xWxSlLjGbjAH0xzOdqO5uGfgc8G0DSwcBjgTvbWJ6OtsBbVprZBHUXdWFJXyMbDTRf0jrgTGAqQEQsAz4MnC/pZkDAGRFxX1HlKbsF8zy72MwmprBEEBGnjnL+LuC5RcWvGncWm9lEeWZxSdSahu7auJXdezyXwMzGzomgJGZMncJBs6eza0+wfpNrBWY2dk4EJeLF58xsIpwISqTWPOQOYzMbDyeCEql1GHsIqZmNhxNBiQwsPuedysxsHJwISsR7F5vZRDgRlIg7i81sIpwISqR3zgymdIm7t2xj+67d7S6OmXUIJ4IS6Z7SRe+cGUTA791hbGZj5ERQMl58zszGy4mgZNxhbGbj5URQMu4wNrPxciIomdpcAtcIzGysnAhKZmB2sSeVmdkYORGUzEDTkDuLzWyMnAhK5sBZ05nW3cWGh3bw0PZd7S6OmXUAJ4KS6eoSC+Z6CKmZjZ0TQQkN7F/sfgIzGwMnghJa6H0JzGwcnAhKyHMJzGw8nAhKyLOLzWw8nAhKaGBSmfsIzGwMnAhKaEHdlpUR0ebSmNlk50RQQgf0TGW/aVN4cPsuNm3d2e7imNkk50RQQpLcYWxmY+ZEUFIL3GFsZmPkRFBS7jA2s7FyIigpDyE1s7FyIiip2paV7iMws9EUlggknSfpHklrRnjOiZJulHSLpCuLKksV1TqL17lGYGajKLJGcD7wvOFOSpoLnAO8OCKeAJxSYFkqZzAReC6BmY2ssEQQEVcBG0Z4yp8BF0XE7/Ln31NUWapo1vRuDuiZyvZde7h3y/Z2F8fMJrF29hEcARwg6QpJqyS9ro1lKaXB3crcPGRmw1ORzQaSFgErIuKoBuc+AywBng3MBK4DXhgRv2zw3KXAUoDe3t7Fy5cvn1B5+vv76enpmdBrJ1ucscT45HUbuW7dNk570hyecdjMwuI0qywxWhWnLDFaFacsMZqNs2TJklURsaThyYgo7AtYBKwZ5tzfAh+se3wucMpo11y8eHFMVF9f34RfO9nijCXGRy+5NQ47Y0V8+oe/LDROs8oSo1VxyhKjVXHKEqPZOEBfDPO52s6moYuBp0vqltQDPBm4rY3lKR3PLjazsegu6sKSvgacCMyXtA44E5gKEBHLIuI2Sd8HVgN7gC9GxLBDTW38ajuVee9iMxvJuBOBpAOAhRGxeqTnRcSpo10rIj4BfGK8ZbCxcWexmY3FmJqG8pE9+0uaB9wEfEnSvxRbNGvWoXOzGsFdG7exa/eeNpfGzCarsfYRzImIzcDLgS9FxGLgOcUVy1KYMXUKB+8/nd17gvWbtrW7OGY2SY01EXRL6gVeCawosDyWmBefM7PRjDURnAVcCtwREddLehTwq+KKZanUFp9b58XnzGwYY+0sXh8RR9ceRMSd7iPoDO4wNrPRjLVGcPYYj9kks7BuI3szs0ZGrBFIegrwVOBASafXndofmFJkwSyNBd6pzMxGMVrT0DRgVv682XXHNwMnF1UoS8edxWY2mhETQURcCVwp6fyI+G2LymQJ9c6ZwZQucffm7WzbuZsZU12RM7O9jbWzeLqkz5MtIjfwmoh4VhGFsnS6p3RxyNwZrN2wld9v3MqjD5zV7iKZ2SQz1kTwDWAZ8EVgd3HFsSIsmNvD2g1bWbuh34nAzPYx1kSwKyI+W2hJrDAL583kujthrUcOmVkDYx0+ulzSWyX1SppX+yq0ZJbM4BBSdxib2b7GWiN4ff79vXXHAnhU2uJYEQY2svfsYjNrYEyJICIeWXRBrDgLa3MJXCMwswbGlAiG21g+Ir6ctjhWhIG5BJ5UZmYNjLVp6Li6f88g23D+BsCJoAPMnzWdad1dPNC/kwe372LW9MI2pjOzDjTWpqF31D+WNAe4oJASWXJdXWLBATO5896HWLuhn8f37t/uIpnZJDLRzev7gcNTFsSK5cXnzGw4Y+0jWE42SgiyxeYeD1xYVKEsvYVefM7MhjHWxuJP1v17F/DbiFhXQHmsIF58zsyGM6amoXzxuV+QrUB6ALCjyEJZegMb1HgugZkNMaZEIOmVwM+AU8j2Lf6pJC9D3UE8u9jMhjPWpqG/A46LiHsAJB0I/BD4ZlEFs7Rqexev3dBPRCCpzSUys8lirKOGumpJIHf/OF5rk8DcnqnMmt7NQzt280D/znYXx8wmkbF+mH9f0qWS3iDpDcB3gUuKK5alJmmgVuDmITOrN2IikPQYSSdExHuBzwFHA8cA1wGfb0H5LCF3GJtZI6PVCP4N2AIQERdFxOkR8W6y2sC/FVs0S81DSM2skdESwaKIWD30YET0kW1baR3Ek8rMrJHREsGMEc7NTFkQK96CgRqBm4bMbNBoieB6SX859KCkNwGriimSFaVWI1jnGoGZ1RltHsG7gG9Jeg2DH/xLgGnAy0Z6oaTzgBcB90TEUSM87zhgJfCqiPC8hALVLzy3Z0/Q1eW5BGY2So0gIu6OiKcCZwG/yb/OioinRMQfRrn2+cDzRnqCpCnAx4FLx1hea8J+07uZt980duzew70Pbm93ccxskhjrfgSXA5eP58IRcZWkRaM87R3A/7D3xjdWoIUHzGTDQztYu6Gfg/cfqQvIzKqibbODJR1K1ry0rF1lqKIF8zyE1Mz2pogY/VkTvXhWI1jRqI9A0jeAT0XESknn589r2EcgaSmwFKC3t3fx8uXLJ1Se/v5+enp6JvTayRZnojEuWL2Fb9/+EK9+wixOOXJWYXHGoywxWhWnLDFaFacsMZqNs2TJklURsaThyYgo7ItsrsGaYc79msF+hweBe4CXjnbNxYsXx0T19fVN+LWTLc5EY1xw3W/isDNWxN9ceGOhccajLDFaFacsMVoVpywxmo0D9MUwn6tt28U8Ih5Z+3ddjeDb7SpPVSx005CZDVFYIpD0NeBEYL6kdcCZwFSAiHC/QJssHFh4zpPKzCxTWCKIiFPH8dw3FFUO29uhB8xEgvWbtrFr9x66p3g1cbOq86dAxUzvnsLBs2ewe0+wftO2dhfHzCYBJ4IK8uJzZlbPiaCCFng5ajOr40RQQQsH9i92h7GZORFUkmcXm1k9J4IKql+F1MzMiaCC3FlsZvWcCCqod85MurvEPVu2s23n7nYXx8zazImggqZ0iUPmeoaxmWWcCCpqQW3kkDuMzSrPiaCiBjqM3U9gVnlOBBU10GHspiGzynMiqKjactTr3DRkVnlOBBU1sMyEZxebVZ4TQUUNNg25RmBWdU4EFXXgrOlM7+5iY/9Otmzb2e7imFkbORFUlKTBIaRuHjKrNCeCCvP+xWYGTgSV5sXnzAycCCrNi8+ZGTgRVNpgjcCJwKzKnAgqzHMJzAycCCqtfi5BRLS5NGbWLk4EFTZn5lRmT++mf8duNjy0o93FMbM2cSKoMEl1+xe7ecisqpwIKm7hAbUNatxhbFZVTgQVNzCpzB3GZpXlRFBxC71TmVnlORFU3OAQUicCs6pyIqi4wQ1q3DRkVlWFJQJJ50m6R9KaYc6/RtLq/OtaSccUVRYbXm0F0t8/sJU9ezyXwKyKiqwRnA88b4TzvwaeGRFHAx8GPl9gWWwY+03v5mH7TWPH7j3cvWVbu4tjZm1QWCKIiKuADSOcvzYiHsgfrgQWFFUWG9kCNw+ZVdpk6SN4E/C9dheiqgZGDrnD2KySVOQaM5IWASsi4qgRnnMScA7wtIi4f5jnLAWWAvT29i5evnz5hMrT399PT0/PhF472eKkjHHB6i18+/aHeNUTZvHKI2cVFmc4ZYnRqjhlidGqOGWJ0WycJUuWrIqIJQ1PRkRhX8AiYM0I548G/hc4YqzXXLx4cUxUX1/fhF872eKkjPGVlb+Jw85YEe+58MZC4wynLDFaFacsMVoVpywxmo0D9MUwn6ttaxqS9AjgIuC1EfHLdpXDBvclcNOQWTV1F3VhSV8DTgTmS1oHnAlMBYiIZcA/AA8DzpEEsCuGq7ZYoTyXwKzaCksEEXHqKOffDLy5qPg2dofMnYEE6zdtZefuPUydMlnGEJhZK/gv3pjePYWH7z+DPQHrN3ougVnVOBEYUNdP4MXnzCrHicCAwaUm3GFsVj1OBAZQt1OZE4FZ1TgRGFA/u9gjh8yqxonAgLqdylwjMKscJwIDPJfArMqcCAyAh+8/g+4uce+W7WzbubvdxTGzFnIiMACmdIlD5mb9BOvcPGRWKU4ENmDhPHcYm1WRE4EN8KQys2pyIrABAyOHPKnMrFKcCGzAAs8lMKskJwIbMDCEdKNrBGZV4kRgAwY3qHGNwKxKnAhswPxZ05gxtYtNW3eyedvOdhfHzFrEicAGSGKBt600qxwnAtuLF58zqx4nAtvL4JpDrhGYVYUTge1loZuGzCrHicD2UltmwquQmlWHE4HtZYGXmTCrHCcC20v9XIKIaHNpzKwVnAhsL3N6pjJ7Rjdbd+7m/od2tLs4ZtYCTgS2D3cYm1WLE4HtY2BfAncYm1WCE4Hto1Yj8FwCs2pwIrB9DO5L4BqBWRU4Edg+avsSuEZgVg1OBLYP71RmVi1OBLaPWo3g9xu3sttzCcxKr7BEIOk8SfdIWjPMeUn6tKQ7JK2WdGxRZbHx6ZnWzfxZ09i5O3hg6552F8fMClZkjeB84HkjnH8+cHj+tRT4bIFlsXGqLTVx90O721wSMytad1EXjoirJC0a4SkvAb4c2ToGKyXNldQbEeuLKpON3cJ5Pdy4diMr123jYauL/ZXcuXYbf5ja+TFaFacsMVoVpywxAO65ezuLC7huYYlgDA4F1tY9XpcfcyKYBA7LO4wvuaOfS+64ofiAK0sSo1VxyhKjVXFKEuPweVN54wvSX7ediUANjjXsmZS0lKz5iN7eXlatWjWhgP39/RN+7WSLU3SMo3p2c9KimTy4bSfd3VMKiwOwa9fuUsRoVZyyxGhVnLLEAJg/PYr5u4+Iwr6ARcCaYc59Dji17vHtQO9o11y8eHFMVF9f34RfO9ni+GeZfDFaFacsMVoVpywxmo0D9MUwn6vtHD76HeB1+eih44FN4f4BM7OWK6xpSNLXgBOB+ZLWAWcCUwEiYhlwCfAC4A6gH3hjUWUxM7PhFTlq6NRRzgfwtqLim5nZ2HhmsZlZxTkRmJlVnBOBmVnFORGYmVWcE4GZWcUpOmyZYUn3Ar+d4MvnA/clLE474/hnmXwxWhWnLDFaFacsMZqNc1hEHNjoRMclgmZI6ouIJWWI459l8sVoVZyyxGhVnLLEKDKOm4bMzCrOicDMrOKqlgg+X6I4/lkmX4xWxSlLjFbFKUuMwuJUqo/AzMz2VbUagZmZDeFEYGZWcU4E1nKSpjc4Nq8dZTGzEvcRSLowIl4p6Wb23gJTZKtgH92mojVF0lHAkcCM2rGI+HLiGFOAg6lbpjwifpfw+t8FXhoRO/PHvcCKiEi6L3eD3z3AJqAP+EhE3N/Etf88Ir4i6fRG5yPiXyZ67RFivhB4Anv/7j+U8PqNkvGW2u8pUYzDgY+x73v4UaliFE3SsyLix5Je3uh8RFxUQMynku34WP83mezvvp17FhfttPz7i4oOlL8hPg4cRJZoaslm/8RxziTb7OdIso19ng9cDSR7Q0h6B9kmQncDe/LDAaRMnN8GviHpFcBCst3q/ibh9Wu+B+wGvpo/fnX+fTNwPvCnTVx7v/z77Abnkt9dSVoG9AAnAV8ETgZ+ljjMDWS/jwfI3sNzgfWS7gH+MiJSbJb7JbL317+S/SxvpPH+5eMmaQuN/+9T/z0+A/gx2ftnn5tMIGkikHQB8GjgRrL3M3mcdH/3Za0RtJKkO4A/jYjbCo5zM3AM8POIOEbSwcAXI6KZD7ShMe4AntzM3fIY47wNeB7ZXc5fRcS1BcS4JiJOaHRM0s0R8UcJYpwQEdeMdixBnNURcXTd91nARRHx3IQxlgHfiohL88fPJfsdXQj8e0Q8OUGMVRGxuP7/X9JPIuLpzV67VSS9h+yDWHXfyf+dvDYo6TbgyCjww7q0NYIR7g4ASHy3fnfRSSC3NSL2SNolaX/gHiB1lXotWfNJckOaUUR293kjcLyk4wtoTpkl6ckR8dM8/pOAWfm5XYlinA0cO4Zjzdqaf++XdAhwP/DIxDGWRMRbag8i4geSPhoRpzfq15mgbZK6gF9Jejvwe7KadHKSDmLv5qdUzZu199BjgeOAi8nez38KXJUoRr01wMOBwvZ0L20iiIjZAJI+BPwBuIDsl/UaGlfnm9En6etkTR7b68qQuq2wT9Jc4AvAKuBBEjUP1H1I3wlckbfj1/8sKT6kh/6/f2uY46m8GTgvv3sWWZPQmyXtR9ZOPWGSngI8FThwSILbH5jSzLWHsSL/3X+CrAknyJqIUtog6Qzgv/PHrwIeyPuM9gz/snF5F1kT1zuBD5M1D70+0bUBkPRi4FPAIWQ3S4cBt5H1rzQtIs7K4/wAODYituSPPwh8I0WMIeYDt0r6GXv/Tb44VYDSNw1J+unQKm2jY03G+FKDwxERf5Ho+idExDWSpkfE9vzYImD/iFidKMaZI52vvfk7kaQ5ZO/1jQmv+Uyy/pq3AMvqTm0BlkfEr1LFahB7OjAjIpLW3CTNJ2u/fxpZ4rwaOIushviIiLgjQYyjImJNs9cZJcZNwLOAH0bEEyWdBJwaEUsTx/kFcEzd3+R04KaIeFziOM9sdDwirkwWowKJ4FrgP8jucgI4FXhbRDy1rQUbh7p21RsiInWTQ8tJOhB4H/uOgHlW4jjTgVew72iLlCNtHhkRvx5y7LiIuD7R9RuOTKkpYoRKkSRdDUwj66z/asrkXBejLyKW5AnhiXlz6s8i4kmJ4/wd8Eqymm0ALwO+HhFN1TbbobRNQ3X+DPj3/CuAa/JjyUiaAbyJfT/YktQIgJ15rWOBpE8PPRkR70wUp1Uf0v8FfJ1sRNdbyJoG7k14/ZqLye5mV1FXpU7sm5JeHBG/B5D0DLIbj6Y7onO1gQAHkTVF/Th/fBJwBQlHqEg6gmz01iL2TpzJfvcR8bR8COlfkDV1Xg+cFxGXpYoBbMybA68C/isf9ZSqT2hARPyjpO8BtY7uN0bEz1PHkXQ8Wb/T48mS6BTgoZT9nKWvEbSCpG8AvyBLMB8i64e4LSJOG/GFY7/+fOA5ZENU/2Ho+Yj4zxRx8lg/IPuQ/hvqPqQj4oyEMWo1nNW1+RySroyIhlXgJuKsiYijUl6zQYzjgHPIPrCPBT5KNoJsbeI4K8iGcK7PH/cC/xERI9YYxhnjJrJmrlUMDlMk0bDRobGmAC8FPk3WdyPg/SlqOHkf0DYG+wTnAP9V9Ei4okjqIxv6/A1gCfA64PCIeH+qGKWvEeR3uH/Jvnc5qe7WAR4TEadIeklE/KekrwKXJrz+eyPiDEmPSPmhP4yHRcS5kk7L2yCvlJSsLTJXm6C0XtkkqbuABYljAFwr6Y8i4uYCrg1ARFwv6Z3AD8g+fP4kIoqo3SyqJYHc3cARiWPsiojPJr7mXiQdTTZ34IXAZWRJ84Z8JNR1JKjhRMRDdQ+L/ntpiYi4Q9KUiNgNfClv8k6m9ImArHngJ8APqbvLSaz2wbZR2czfP5AlnlReIOkDZHcF/5zwuo204kP6I3kH7nvIqrz7A+9OHAOyTs83SPo1WdNQslnlkpaz9/DkHrJmqHMlJR3RkbtC0qXA1/K4rwYuTxxjuaS3krV5149O2ZAwxmfIRju9PyJqQ2KJiLvy93jThhk6XptR/p6IuDNFnBbqlzQNuFHSP5MNI91vlNeMS+mbhiTdGBF/XHCMNwP/Q9YufD7ZOOO/j4jPJbr+J4ClZL/8/vpTJJ7BLOlFZIlzIYMf0mdFxHdSxWgVSYc1Oh4RE93zuv7aIzZjpRzRURfz5Qy2R18VEd8a6fkTuP6vGxyO6KDlHwAknUV2A/NVsr+RV5ONw78d+OuIOLF9pRu//H18DzCV7IZpDnBOilFcAzEqkAg+AlwbEZcUcO1G68wMzDIsYIbhxRHxkpTXbIcWNdfVxytqYpGNk6QTgA+Sje3vZvBmJlmyGWbI+MqIOF7STRFxTKpYZVGFpqHTgPdL2k7W7JHyLro2Eao2w7B211zIDMMik4Cksxl5JnaykUm0prmu8IlFeYzCR3S0OE7RixqeS3ZXu1eHdGJ7JL0S+Gb++OS6cx1z56vGiyYOSNHEWVP6RBARs5Wtqng4dW/uRNduyQxDSVfnw+5qbZ/1a5ykSmp9Ca4xVj0pRyGN4MPA8QyZWJQ4xmdoMKIjcYzh4jwmZQC1YFFDYFNEfC/h9Rp5Ddlw8XPI/k5WAn8uaSbw9oJjp1T4gpk1pU8Eefv9aWQdnjeSfTBcCzw7YZhHADvqHu8gYWdxRDwt/17UUgxJh6COwQpJLyiiuW6InRFxv6QuSV0Rcbmkj6cOUvSIjhbGOZnBRQ3fqHxRw8QxLs/7vC5i7w7pG1IFyDuDh1uI8epUcYqWoi9rrEqfCMiSwHHAyog4SdLjyKbNp3QB8DNJ9TMMO3LYWt5+fwb7Ng+knFBWZHNdvdrEop9Q3MSiwkd0tDBOKxY1rLXdL6k7FmRLQiTRaNIl+aihiLg4VZxWaUWzYBUSwbaI2CYJZWv1/ELSY1MGaNUMwxapzfp9IQXN+i2yuW6Ii4GZZAud1SYWJVteIvdasp3+3k7W9r2QbFmL1FoRp7BFDWsi4qSU1xvGDOBxDDbPvgK4BXiTpJMi4l0tKENKxTcLVmDU0LfIJrC8i+yu4wFgakS8oJ3lmqxaMet3uOa6iEjZXFcbMfZqstU6zwMujQLe8Pmd+uPI7mxvj4gdo7xk0sWRJGBBbUa0Ei9qOCRW0Tut/Rh4bkTsyh93k034+xPg5og4MlWsVtDg2kn1f5PXRsL10kq/Z3FEvCwiNkbEB4G/Jxu18NK2Fmpy22tCmaQnkn5CWa257rf5HeITgfsSxyAiPkBW6zgXeAPZGvgflfToVDHyD7X/JVsq4TPAHZKen+r6rYqTJ8hv1z3+TUFJYBnZ8tbvIGsSPIVsNFdKh7J3s9l+wCF530pRa04Vaa9mQUnvJnGzYBWahgYUMcmnhFox67fw5rqaiAhJfyCb7b0LOIBsobjLIuJ9CUJ8CjipNrknTzLfJdsmM6VWxFmphCunDuOpMbjT2lmSPkXirR3JZt/fKOkKsmTzDOCjytYg+mHiWK3QqFkw2RpTULFEYKOLiBX5PzeRrXBZhHV5W/S3gcskPUA2EzQpZWsAvZ6stvFFsjWbdirfIYtsldVm3TNkhuedZJ2sqbUizknAWyT9BniIhEty1Cl8p7XI1sq6BHgSg4vZ1d5f700Zq0WOzEcQbSMf6CLpLWQ1xCScCAxo7YSyiHhZ/s8PSrqcrBP3+6muX2c+8PKhw/DykTFNjdHW4D4Bt+QfOheS/f+dAhRxR90wTq0ckWZfgueT1ZgGlrEANia4br1W7LQG2R30vWSfcY+R9JiIKGIbyVb4e0nbI+LHAJLeR5a0l438srErfWexjY2k2naBJ5ANHf16/vgUYFVEFLEoXMdS413paiL1chmtiCfpNLLtPS8iu5N+KfCFiDi72WsPE6+ondY+TtYPcQuDW2xGpF8IsCWULUO/gqw28zyyAQOvjoidI75wPDGcCKxefof+3NqbTNJU4ActGvbXUZStqf/OiPjXdpclBUmrgadEvoxz3qZ+XcqmIUmva3Q85TIWkm4Hjo58C8kyULZe1g/JhvX+RerRb6UfNWTjdgh7byY/Kz9mQ+SjUFpylynpCEk/krQmf3y0Ei3bXB+Gvdf/2c3gIoqpHFf39XSyBehS/x/eSbZSZ0eTtEXS5nxpmTvI9p84BdgsaXPKWO4jsKH+Cfh5XjMAeCbZH6s1dq2kz5A1pQ1siJJyyYTcF8iaBj6XX3+1sg2QPpIwxpeAn+ZzbyBrGjo34fWJiHfUP85HqF2QMgbZUu03SvoRey9jkXLhxMIVuaTMUG4asn3kozleS7ZSZw9wVwd3tBWqLmHWi8RLciDp+og4TtLPI+KJ+bHke21IOpZsQx+R7XlQ6Az5vOnx5oh4XMJrvr7R8Ravp5VM/jsZahPZPJwkS6a4RmB7GWbW73UkXAumTFrYd3JfPncgACSdTLbeUFJ5TSZ1bWaApPoNjrrIBiZcmDJGp37gj+Acsv2wa1uu/hFwE/AwSW+JiB80G8B9BDZUo1m/RezBWwqSDpZ0br7WFJKOlPSmAkKdSdYs9DhJvydbMqXo1VuL8HCyyXGfAj5G1vSYpB9C0oX595slrR7ydVOKGG3yG+CJEbE4IhYDfwysAZ5Doq1rnQhsqG0RsQ0YmPVLtvGONXY+cCmDHeq/JPuQTm0ZcDpwINnwwf8A/ryAOEXrjogr869r8rWNUi2VcVr+/TayZahrXy8m26ayUz0uIm6pPYiIW8kSQ7K9l900ZEO1ZNZvicyPiAsl/X+AiNglqYidt04mW33yNWRt+K8DnltAnEJI+mvgrcCj8mGqNbOBa1LEiIhaU9ljhk4iVLb8fKe6XdJngf/OH78K+GU+DyPJXAJ3FtuwlG3QPgf4flErana6fD2bVwCXRcSxytaO/3jK1VrrYh1BlqDXAi+NiK0jv2LyyEcHHUDWHPS3dae2RMSGRDEGkg17L78wG7gmIjqxBoWyndXeymAn/tVk/QbbyHb7e7DpGE4EZhOXj+g4m2xZ5VvImm5OTrVyp/bdt/YgshEj2yHtvrWdrhXJpqycCMyaIGkG2aqQ/w/YQjbC6uxaP0uC64+4RPPQJhArH0knkM3lOYy65vyISLZ7nBOBWRPykSqbyXZ2AzgVOCAiTmlfqaxMJP2CbPnpVdTN/I6I+1PFcGexWXMeGxHH1D2+vMOHKtrksykiUu9vsRcnArPm/FzS8RGxEkDSk0k0CsYsd7mkT5CtClu/ZEayiX9uGjKbgLpO3Klk8yx+lz8+DLg1Io5qY/GsRFqxjIkTgdkEuBPXysSJwMxskpP0QrIhyjNqxyLiQ6mu7yUmzMwmMUnLyGYTv4NsQtkpZE2Q6WK4RmBmNnlJWh0RR9d9nwVcFBHJlhhxjcDMbHKrLSXSn+8VshN4ZMoAHj5qZja5rcgXgvxnskllAF9MGcBNQ2Zmk1i+6Nxfk+3xHMBPgM+mWsYEnAjMzCa1fBmTLcBX8kOnAnMj4pXJYjgRmJlNXpJuGrKMScNjzXBnsZnZ5PbzfJ8LoJhlTFwjMDObhFq5jIkTgZnZJNTKZUycCMzMKs59BGZmFedEYGZWcU4EVmmS/k7SLZJWS7oxH5FRVKwrJC0p6vpmE+UlJqyyJD0FeBFwbERslzQfmNbmYpm1nGsEVmW9wH0RsR0gIu6LiLsk/YOk6yWtkfR5SYKBO/p/lXSVpNskHSfpIkm/kvSR/DmLJP1C0n/mtYxvSuoZGljScyVdJ+kGSd/IV5RE0j9JujV/7Sdb+H9hFeZEYFX2A2ChpF9KOkfSM/Pjn4mI4/Jx2jPJag01OyLiGcAy4GLgbcBRwBskPSx/zmOBz0fE0cBm4K31QfOaxweA50TEsUAfcLqkecDLgCfkr/1IAT+z2T6cCKyyIuJBYDGwFLgX+LqkNwAnSfppPqHnWWQ7Q9V8J/9+M3BLRKzPaxR3Agvzc2sjojbz8yvA04aEPh44ErhG0o3A68kmCW0GtgFflPRyoD/Vz2o2EvcRWKVFxG7gCuCK/IP/r4CjgSURsVbSB6nbHhDYnn/fU/fv2uPa39PQyTlDHwu4LCJOHVoeSU8Cng28Gng7WSIyK5RrBFZZkh4r6fC6Q38M3J7/+7683f7kCVz6EXlHNGQrRV495PxK4ARJj8nL0SPpiDzenIi4BHhXXh6zwrlGYFU2Czg73/RjF3AHWTPRRrKmn98A10/gurcBr5f0OeBXwGfrT0bEvXkT1NckTc8Pf4BsqeGLJc0gqzW8ewKxzcbNS0yYJSRpEbAi5YJgZkVz05CZWcW5RmBmVnGuEZiZVZwTgZlZxTkRmJlVnBOBmVnFORGYmVWcE4GZWcX9H5w/D5EQJBFjAAAAAElFTkSuQmCC" /></p>
+<p>Kemunculan adalah variabel pada kode sebelumnya, yang kemudian di plot (), dengan nilai maximal dari x yaitu 30 kata dan komulatif bernilai salah. .plot(x,y)</p>
+<h5> Pemisahan kalimat per paragraf </h5>
+
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">sent_tokenize</span>
+
+<span class="n">kalimat</span> <span class="o">=</span> <span class="s2">&quot;Andi dan Iffa adalah anak yang berbakti kepada orang tuanya. Andi dan Iffa tinggal di Bangkalan&quot;</span>
+
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">tokenize</span><span class="o">.</span><span class="n">sent_tokenize</span><span class="p">(</span><span class="n">kalimat</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Output</p>
+<div class="codehilite"><pre><span></span><code>[&#39;Andi dan Iffa adalah anak yang berbakti kepada orang tuanya.&#39;, &#39;Andi dan Iffa tinggal di Bangkalan&#39;]
+</code></pre></div>
+
+<p>sent_tokenize adalah kelas pada python yang digunakan untuk memisahkan kalimat berdasarkan tiap paragraf</p>
+<h3> Filtering dan StopWord </h3>
+
+<h5> Menggunakan NLTK </h5>
+
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">sent_tokenize</span><span class="p">,</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+
+<span class="n">kalimat</span> <span class="o">=</span> <span class="s2">&quot;Andi dan Iffa adalah anak yang berbakti kepada orang tuanya. Andi dan Iffa tinggal di Bangkalan&quot;</span>
+<span class="n">kalimat</span> <span class="o">=</span> <span class="n">kalimat</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">))</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">kalimat</span><span class="p">)</span>
+<span class="n">listStopword</span> <span class="o">=</span>  <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">))</span>
+
+<span class="n">removed</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tokens</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">t</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">listStopword</span><span class="p">:</span>
+        <span class="n">removed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">removed</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Output</p>
+<div class="codehilite"><pre><span></span><code>[&#39;andi&#39;, &#39;iffa&#39;, &#39;anak&#39;, &#39;berbakti&#39;, &#39;orang&#39;, &#39;tuanya&#39;, &#39;andi&#39;, &#39;iffa&#39;, &#39;tinggal&#39;, &#39;bangkalan&#39;]
+</code></pre></div>
+
+<p>Menggunakan Stopwords pada NLTK tujuaanya adalah menghilangkan kata kata yang tidak penting, dengan mengguanakan stopwords.words bertipe indonesia, yang kemudian ditaruh dalam sebuah variabel listStopword. dan kemudian isi dari stopword tersebut di looping satu persatu, dicari apakah ada kata yang sama di sana, lalu jika tidak ada maka di masukkan ke dalam list removed.</p>
+<h5> Menggunakan Sastrawi </h5>
+
+<p>melihat isi stopword pada sastrawi</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">Sastrawi.StopWordRemover.StopWordRemoverFactory</span> <span class="kn">import</span> <span class="n">StopWordRemoverFactory</span>
+
+<span class="n">factory</span> <span class="o">=</span> <span class="n">StopWordRemoverFactory</span><span class="p">()</span>
+<span class="n">stopwords</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">get_stop_words</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stopwords</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Ketika di print akan muncul beberapa kata stopword didalam sastrawi</p>
+<p>Memfilter menggunakan sastrawi</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">Sastrawi.StopWordRemover.StopWordRemoverFactory</span> <span class="kn">import</span> <span class="n">StopWordRemoverFactory</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span> 
+
+<span class="n">factory</span> <span class="o">=</span> <span class="n">StopWordRemoverFactory</span><span class="p">()</span>
+<span class="n">stopword</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">create_stop_word_remover</span><span class="p">()</span>
+
+<span class="n">kalimat</span> <span class="o">=</span> <span class="s2">&quot;Andi dan Iffa adalah anak yang berbakti kepada orang tuanya. Andi dan Iffa tinggal di Bangkalan&quot;</span>
+<span class="n">kalimat</span> <span class="o">=</span> <span class="n">kalimat</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">))</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="n">stop</span> <span class="o">=</span> <span class="n">stopword</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">kalimat</span><span class="p">)</span>
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">tokenize</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">stop</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Output</p>
+<div class="codehilite"><pre><span></span><code>[&#39;andi&#39;, &#39;iffa&#39;, &#39;anak&#39;, &#39;berbakti&#39;, &#39;orang&#39;, &#39;tuanya&#39;, &#39;andi&#39;, &#39;iffa&#39;, &#39;tinggal&#39;, &#39;bangkalan&#39;]
+</code></pre></div>
+
+<p>Kata kata yang sudah ada di dalam sastrawi, kemudian di stopword menggunakan sastrawi, otomatis kata yang menjadi stopword akan hilang.</p>
+<h5>Menambahkan stopword</h5>
+
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">Sastrawi.StopWordRemover.StopWordRemoverFactory</span> <span class="kn">import</span> <span class="n">StopWordRemoverFactory</span><span class="p">,</span> <span class="n">StopWordRemover</span><span class="p">,</span> <span class="n">ArrayDictionary</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span> 
+
+<span class="c1"># ambil stopword bawaan</span>
+<span class="n">stop_factory</span> <span class="o">=</span> <span class="n">StopWordRemoverFactory</span><span class="p">()</span><span class="o">.</span><span class="n">get_stop_words</span><span class="p">()</span>
+<span class="n">more_stopword</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;kepada&#39;</span><span class="p">,</span> <span class="s1">&#39;tinggal&#39;</span><span class="p">]</span>
+
+<span class="n">kalimat</span> <span class="o">=</span> <span class="s2">&quot;Andi dan Iffa adalah anak yang berbakti kepada orang tuanya. Andi dan Iffa tinggal di Bangkalan&quot;</span>
+<span class="n">kalimat</span> <span class="o">=</span> <span class="n">kalimat</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">))</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="c1"># menggabungkan stopword</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">stop_factory</span> <span class="o">+</span> <span class="n">more_stopword</span>
+
+<span class="n">dictionary</span> <span class="o">=</span> <span class="n">ArrayDictionary</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">str</span> <span class="o">=</span> <span class="n">StopWordRemover</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">tokenize</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">kalimat</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Output</p>
+<div class="codehilite"><pre><span></span><code>[&#39;andi&#39;, &#39;iffa&#39;, &#39;anak&#39;, &#39;berbakti&#39;, &#39;orang&#39;, &#39;tuanya&#39;, &#39;andi&#39;, &#39;iffa&#39;, &#39;di&#39;, &#39;bangkalan&#39;]
+</code></pre></div>
+
+<p>Stopword pada sastrawi akan berjalan lalu ditambah lagi dengan stopword tambahan dari user, seperti pada kata Kepada dan Tinggal.</p>
+<h3> Stemming </h3>
+
+<h5> Menggunankan NLTK </h5>
+
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">PorterStemmer</span>    
+<span class="n">ps</span> <span class="o">=</span> <span class="n">PorterStemmer</span><span class="p">()</span> 
+
+<span class="n">kata</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;program&quot;</span><span class="p">,</span> <span class="s2">&quot;programs&quot;</span><span class="p">,</span> <span class="s2">&quot;programer&quot;</span><span class="p">,</span> <span class="s2">&quot;programing&quot;</span><span class="p">,</span> <span class="s2">&quot;programers&quot;</span><span class="p">]</span> 
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kata</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s2">&quot; : &quot;</span><span class="p">,</span> <span class="n">ps</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+</code></pre></div>
+
+<p>Output</p>
+<div class="codehilite"><pre><span></span><code><span class="n">program</span>  <span class="o">:</span>  <span class="n">program</span>
+<span class="n">programs</span>  <span class="o">:</span>  <span class="n">program</span>
+<span class="n">programer</span>  <span class="o">:</span>  <span class="n">program</span>
+<span class="n">programing</span>  <span class="o">:</span>  <span class="n">program</span>
+<span class="n">programers</span>  <span class="o">:</span>  <span class="n">program</span>
+</code></pre></div>
+
+<p>Stemming adalah proses mengubah kata menjadi kata dasar, dengan menggunakan kelas pada NLTK yaitu PorterStemmer()</p>
+<h5> Menggunakan Sastrawi </h5>
+
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">Sastrawi.Stemmer.StemmerFactory</span> <span class="kn">import</span> <span class="n">StemmerFactory</span>
+<span class="n">factory</span> <span class="o">=</span> <span class="n">StemmerFactory</span><span class="p">()</span>
+<span class="n">stemmer</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">create_stemmer</span><span class="p">()</span>
+
+<span class="n">kalimat</span> <span class="o">=</span> <span class="s2">&quot;Andi dan Iffa adalah anak yang berbakti kepada orang tuanya. Andi dan Iffa tinggal di Bangkalan&quot;</span>
+
+<span class="n">hasil</span> <span class="o">=</span> <span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">kalimat</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hasil</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Output</p>
+<div class="codehilite"><pre><span></span><code>andi dan iffa adalah anak yang bakti kepada orang tua andi dan iffa tinggal di bangkal
+</code></pre></div>
+
+<p>Menggunakan sastrawi juga bisa menstem sebuah kata, Efeknya ketika menginputkan nama daerah, maka akan menjadi kata dasar juga seperti bangkalan menjadi bangkal</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../Text-Preprocesing/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Teori
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../modelling/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Teori
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 Galih Restu Baihaqi
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a1609d9a.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+        <script src="../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
+      
+        <script src="../javascripts/tables.js"></script>
+      
+    
+  </body>
+</html>

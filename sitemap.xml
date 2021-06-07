@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
+     <loc>https://mkdocs.peaceiris.com/</loc>
+     <lastmod>2021-06-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://mkdocs.peaceiris.com/Crawling/</loc>
+     <lastmod>2021-06-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://mkdocs.peaceiris.com/Text-Preprocesing/</loc>
+     <lastmod>2021-06-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://mkdocs.peaceiris.com/Code-Text-Preprocesing/</loc>
+     <lastmod>2021-06-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://mkdocs.peaceiris.com/modelling/</loc>
+     <lastmod>2021-06-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://mkdocs.peaceiris.com/code_python_K-means/</loc>
+     <lastmod>2021-06-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://mkdocs.peaceiris.com/Evaluasi-Klasifikasi/</loc>
+     <lastmod>2021-06-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://mkdocs.peaceiris.com/Code-Evaluasi-Klasifikasi/</loc>
+     <lastmod>2021-06-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+</urlset>
